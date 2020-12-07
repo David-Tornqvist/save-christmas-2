@@ -16,22 +16,22 @@ function sortKids(arr,sortBy){
     } else {
         
         return arr.sort((a,b) => {
-            
+            const fa = a.name.toLowerCase();
+            const fb = b.name.toLowerCase();
+
+        if (fa < fb) {
+            return -1;
+        }
+        if (fa > fb) {
+            return 1;
+        }
+        return 0;
         });
-
-    const fa = a.name.toLowerCase();
-    const fb = b.name.toLowerCase();
-
-    if (fa < fb) {
-        return -1;
-    }
-    if (fa > fb) {
-        return 1;
-    }
-    return 0;
     }         
 }
 
 console.log(sortKids(kids,"naughtyScore"));
 console.log(sortKids(kids,"age"));
 console.log(sortKids(kids,"name"));
+
+//Är det så att att > på strängar jämför första bokstaven?
